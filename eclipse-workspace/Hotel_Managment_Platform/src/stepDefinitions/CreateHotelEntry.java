@@ -168,15 +168,6 @@ public class CreateHotelEntry {
 			System.out.println("Booking HAS BEEN DELETED");
 		}
 
-		if (driver.getPageSource().contains("Zappa")) {
-			System.out.println("Booking has NOT BEEN DELETEDT");
-		} else {
-			System.out.println("Booking HAS BEEN DELETED");
-		}
-
-		//driver.findElement(By.partialLinkText("Home")).click();
-		
-		//driver.close();
 	}
 	
 // Scenario 4 Making multiple bookings
@@ -202,21 +193,17 @@ public class CreateHotelEntry {
 	                // use comma as separator
 	                String[] hotels = line.split(cvsSplitBy);
 	                // reading a line column by column
-	                for(int i=0;i<hotels.length;i++) {
-	                	System.out.print(hotels[i].replaceAll("\"", ""));
 	                	
-	                	driver.findElement(By.id("firstName")).sendKeys(hotels[0].replaceAll("\"", ""));
-	            		driver.findElement(By.id("lastName")).sendKeys(hotels[1].replaceAll("\"", ""));
-	            		driver.findElement(By.id("totalPrice")).sendKeys(hotels[2].replaceAll("\"", ""));
-	            		driver.findElement(By.id("depositPaid")).sendKeys(hotels[3].replaceAll("\"", ""));
-	            		driver.findElement(By.id("checkIn")).sendKeys(hotels[4].replaceAll("\"", ""));
-	            		driver.findElement(By.id("checkOut")).sendKeys(hotels[5].replaceAll("\"", ""));
-	            		
+	                	String[] fields = { "firstName", "lastName", "totalPrice", 
+	                			"depositPaid", "checkIn", "checkOut" };
+	                	
+	                	for (int j = 0; j < fields.length; j++) 
+	                		driver.findElement(By.id(fields[j])).sendKeys(hotels[j].replaceAll("\"", "")); 
+	                	
 	            		driver.findElement(By.id("createBooking")).click();
-	                }
+	                
 	                System.out.println(); // next line
 	                
-//	                driver.findElement(By.id("createBooking")).click();
 	            }
 
 	        } catch (FileNotFoundException e) {
