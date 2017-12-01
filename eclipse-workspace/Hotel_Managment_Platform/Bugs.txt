@@ -1,0 +1,15 @@
+#Validation:
+
+Bug: An entry can be made multiple times with the same details for a hotel or guest as there is no checking on unique names
+
+Bug: No validation on the phone number or email when creating a hotel entry
+
+Bug: Using a £ or $ in the price field stops an entry being created
+
+Bug: No validation on correct format for email address
+
+Bug: Bookings can be made in the past
+
+#Look and Feel:
+
+Bug: Button text does not resize when the browser window is resized
