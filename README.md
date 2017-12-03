@@ -2,8 +2,12 @@
 
 Automation Tests against Hotel Management Platform
 
-This project has been written as BDD using Java - Selenium - Cucumber and is run with Junit.
+There are two different sets of tests in the suite, backend and frontend:
 
-Clone this project to your IDE, the lib folder contains all the required jars these will need to be aded to your build path.
+Backend:
 
-To run the tests run the TestRunner.java file (located in scr > cucumberTest) as a Junit Test
+Java - RestAssured - TestNg
+
+Frontend:
+
+BDD using Java - Selenium - Cucumber - Junit.
